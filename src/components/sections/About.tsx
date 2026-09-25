@@ -118,7 +118,7 @@ export function About() {
               boxShadow: '0 24px 64px -12px rgba(22, 119, 168, 0.35), 0 8px 24px rgba(23, 50, 77, 0.2)',
             }}>
               <video
-                src="/assets/VID_20260924_235008_437.mp4"
+                src="/assets/about_video.mp4"
                 autoPlay
                 muted
                 loop

@@ -92,29 +92,32 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Hospital Video Player Card & Floating Badge */}
+          {/* Right Column: Complete Video Showcase & Floating Badge */}
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: 36 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE }}
             style={{ position: 'relative' }}
           >
-            {/* Navy Card with Video Player */}
+            {/* Modern Video Player Card */}
             <div style={{
-              borderRadius: 28, overflow: 'hidden',
-              background: 'linear-gradient(145deg, #17324D 0%, #0E2135 100%)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              boxShadow: '0 24px 60px rgba(23, 50, 77, 0.25)',
+              borderRadius: 28,
+              overflow: 'hidden',
+              background: '#071320',
+              border: '1px solid rgba(255,255,255,0.1)',
+              boxShadow: '0 24px 60px rgba(23, 50, 77, 0.28)',
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',
             }}>
-              {/* Video Player Box */}
+              {/* Full Video Frame - 100% visible, no cropping */}
               <div style={{
                 position: 'relative',
                 width: '100%',
-                height: '300px',
-                background: '#071320',
+                background: '#000000',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 overflow: 'hidden',
               }}>
                 <video
@@ -126,12 +129,14 @@ export function About() {
                   controls
                   style={{
                     width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
+                    height: 'auto',
+                    maxHeight: '520px',
+                    objectFit: 'contain',
                     display: 'block',
                   }}
                 />
-                {/* Floating Video Overlay Tag */}
+                
+                {/* Floating Video Tour Tag */}
                 <div style={{
                   position: 'absolute',
                   top: 14,
@@ -140,34 +145,38 @@ export function About() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6,
-                  padding: '5px 12px',
+                  padding: '6px 14px',
                   borderRadius: 100,
-                  background: 'rgba(23, 50, 77, 0.85)',
+                  background: 'rgba(23, 50, 77, 0.88)',
                   backdropFilter: 'blur(8px)',
                   border: '1px solid rgba(255,255,255,0.2)',
                   color: '#FFFFFF',
-                  fontSize: '0.72rem',
+                  fontSize: '0.75rem',
                   fontWeight: 700,
                   letterSpacing: '0.03em',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
                 }}>
-                  <Play size={11} fill="#4AA9C8" color="#4AA9C8" /> Hospital Tour & Facilities
+                  <Play size={11} fill="#4AA9C8" color="#4AA9C8" /> Hospital Video Tour & Facilities
                 </div>
               </div>
 
-              {/* Video Card Body Info */}
-              <div style={{ padding: '2rem 2rem 2.25rem' }}>
+              {/* Video Card Bottom Info */}
+              <div style={{
+                padding: '1.75rem 2rem 2rem',
+                background: 'linear-gradient(145deg, #17324D 0%, #0E2135 100%)',
+              }}>
                 <h3 style={{
                   fontFamily: 'Fraunces, Georgia, serif',
-                  fontSize: '1.45rem', fontWeight: 700,
-                  color: 'white', marginBottom: '0.6rem', lineHeight: 1.3,
+                  fontSize: '1.4rem', fontWeight: 700,
+                  color: 'white', marginBottom: '0.5rem', lineHeight: 1.3,
                 }}>
                   Compassionate, Family-Centered Care
                 </h3>
                 <p style={{
-                  color: 'rgba(255,255,255,0.7)',
-                  lineHeight: 1.75,
-                  fontSize: '0.92rem',
-                  marginBottom: '1.5rem',
+                  color: 'rgba(255,255,255,0.72)',
+                  lineHeight: 1.7,
+                  fontSize: '0.9rem',
+                  marginBottom: '1.25rem',
                 }}>
                   A team of qualified doctors and management working together to provide the best healthcare experience for your children.
                 </p>
@@ -182,7 +191,7 @@ export function About() {
                     <div key={l}>
                       <div style={{
                         fontFamily: 'Fraunces, Georgia, serif',
-                        fontSize: '1.4rem', fontWeight: 700,
+                        fontSize: '1.35rem', fontWeight: 700,
                         color: '#69C1DC',
                       }}>{v}</div>
                       <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', marginTop: 2 }}>{l}</div>

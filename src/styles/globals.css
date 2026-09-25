@@ -417,10 +417,12 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
 
 @media (max-width: 992px) {
-  .hero-grid-container {
+  .hero-grid-container,
+  .care-beyond-grid {
     grid-template-columns: 1fr !important;
   }
-  .hero-left-col, .hero-right-col {
+  .hero-left-col, .hero-right-col,
+  .care-journey-col, .care-whatsapp-col {
     grid-column: span 1 !important;
   }
   .hero-right-col video {

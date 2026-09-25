@@ -6,6 +6,7 @@ import { Specialities } from '@/components/sections/Specialities';
 import { Doctors } from '@/components/sections/Doctors';
 import { WhyChoose } from '@/components/sections/WhyChoose';
 import { DigitalHealthSection } from '@/components/sections/DigitalHealthSection';
+import { CareBeyondVisit } from '@/components/sections/CareBeyondVisit';
 import { CareBand } from '@/components/sections/CareBand';
 import { PatientJourney } from '@/components/sections/PatientJourney';
 import { Appointment } from '@/components/sections/Appointment';
@@ -58,7 +59,7 @@ export function HomePage() {
       <Specialities />
       <WhyChoose />
       <Doctors />
-      {siteConfig.features.showDigitalSolutions && <DigitalHealthSection />}
+      <CareBeyondVisit />
       <CareBand />
       <PatientJourney />
       <Appointment />

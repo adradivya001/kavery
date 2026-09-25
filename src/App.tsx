@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { StickyCallBar } from '@/components/layout/StickyCallBar';
+import { FloatingActions } from '@/components/layout/FloatingActions';
 import { LogoWatermarkField } from '@/components/effects/LogoWatermarkField';
 import { HomePage } from '@/pages/HomePage';
 import { DoctorPage } from '@/pages/DoctorPage';
@@ -38,6 +39,7 @@ export default function App() {
         </main>
         <Footer />
         <StickyCallBar />
+        <FloatingActions />
       </BrowserRouter>
     </HelmetProvider>
   );

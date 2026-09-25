@@ -432,35 +432,7 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* Bottom Floating Location Badge */}
-                <div style={{
-                  position: 'absolute', bottom: '18px', left: '18px',
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(16px)',
-                  padding: '10px 16px',
-                  borderRadius: '18px',
-                  display: 'flex', alignItems: 'center', gap: '10px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                  border: '1px solid rgba(255,255,255,0.9)',
-                  zIndex: 3,
-                }}>
-                  <div style={{
-                    width: '32px', height: '32px', borderRadius: '10px',
-                    background: '#F0F8FC', color: '#1677A8',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    flexShrink: 0,
-                  }}>
-                    <MapPin size={18} />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.875rem', fontWeight: 800, color: '#0F172A', lineHeight: 1.2 }}>
-                      Srikantam Circle
-                    </div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748B' }}>
-                      RTC Bus-stand Road, Anantapuramu
-                    </div>
-                  </div>
-                </div>
+
               </div>
 
               {/* Bottom Dark ECG Status Bar */}

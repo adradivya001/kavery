@@ -25,17 +25,17 @@ export function Specialities() {
           transition={{ duration: 0.55, ease: EASE }}
           style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3.5rem)' }}
         >
-          <div className="section-label" style={{ justifyContent: 'center' }}>OUR SPECIALITIES</div>
+          <div className="section-label" style={{ justifyContent: 'center' }}>OUR MEDICAL SPECIALITIES</div>
           <h2 id="spec-heading" style={{
             fontFamily: 'Fraunces, Georgia, serif',
             fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700,
-            lineHeight: 1.12, letterSpacing: '-0.02em', color: 'var(--text)', maxWidth: 600, margin: '0 auto',
+            lineHeight: 1.12, letterSpacing: '-0.02em', color: 'var(--text)', maxWidth: 680, margin: '0 auto',
           }}>
-            Specialized Care for{' '}
-            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Growing Families</span>
+            Complete General Medicine &{' '}
+            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Specialized Child Care</span>
           </h2>
-          <p style={{ marginTop: 12, color: 'var(--text-muted)', fontSize: '0.975rem', maxWidth: 640, margin: '12px auto 0', lineHeight: 1.7 }}>
-            From everyday childhood healthcare to specialized medical support, our care approach focuses on making every visit comfortable, accessible and reassuring for children and parents.
+          <p style={{ marginTop: 12, color: 'var(--text-muted)', fontSize: '0.975rem', maxWidth: 660, margin: '12px auto 0', lineHeight: 1.7 }}>
+            From everyday adult physician consultations and chronic disease management to dedicated paediatric treatments and newborn care, we provide comprehensive healthcare for the entire family.
           </p>
         </motion.div>
 

@@ -13,7 +13,7 @@ type NavItem = { label: string; href: string; sectionId?: string };
 const navLinks: NavItem[] = [
   { label: 'Home',         href: '/',              sectionId: 'home' },
   { label: 'About',        href: '/#about',        sectionId: 'about' },
-  { label: 'Paediatric Care', href: '/#specialities', sectionId: 'specialities' },
+  { label: 'Specialities', href: '/#specialities', sectionId: 'specialities' },
   { label: 'Doctors',      href: '/#doctors',      sectionId: 'doctors' },
   { label: 'Why Choose Us', href: '/#why-choose',   sectionId: 'why-choose' },
   { label: 'Digital Care',  href: '/#digital-solutions', sectionId: 'digital-solutions' },

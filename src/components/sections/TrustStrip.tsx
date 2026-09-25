@@ -1,32 +1,32 @@
 import { motion } from 'framer-motion';
-import { Baby, Hospital, Clock, MapPin, ChevronRight } from 'lucide-react';
+import { Baby, Stethoscope, Clock, MapPin, ChevronRight } from 'lucide-react';
 import { useInView, useReducedMotion } from '@/hooks';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
   {
+    icon: Stethoscope,
+    title: 'General Medicine',
+    sub: 'Adult & family healthcare',
+    color: '#0284C7',
+    bg: '#F0F9FF',
+    border: '#E0F2FE',
+    targetId: 'specialities',
+  },
+  {
     icon: Baby,
-    title: 'Paediatric Care',
-    sub: 'Child-focused healthcare',
+    title: 'Specialized Paediatrics',
+    sub: 'Dedicated child healthcare',
     color: '#E11D48',
     bg: '#FFF0F2',
     border: '#FFE4E8',
     targetId: 'specialities',
   },
   {
-    icon: Hospital,
-    title: 'Multi-Speciality',
-    sub: 'Comprehensive medical support',
-    color: '#0284C7',
-    bg: '#F0F9FF',
-    border: '#E0F2FE',
-    targetId: 'why-choose',
-  },
-  {
     icon: Clock,
     title: '24/7 Availability',
-    sub: 'Round-the-clock hospital access',
+    sub: 'Emergency & inpatient care',
     color: '#16A34A',
     bg: '#F0FDF4',
     border: '#DCFCE7',
@@ -34,8 +34,8 @@ const stats = [
   },
   {
     icon: MapPin,
-    title: 'Anantapur',
-    sub: 'Srikantam Circle location',
+    title: 'Anantapur Center',
+    sub: 'Srikantam Circle, Bus Stand Rd',
     color: '#7C3AED',
     bg: '#F5F3FF',
     border: '#EDE9FE',

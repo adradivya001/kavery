@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
-import { BedDouble, MapPin, Stethoscope, Users, CheckCircle2, Baby, ShieldCheck, Play } from 'lucide-react';
+import { BedDouble, MapPin, Stethoscope, Users, CheckCircle2, Baby, ShieldCheck, Play, HeartPulse, Activity } from 'lucide-react';
 import { useInView, useReducedMotion } from '@/hooks';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const checkmarks = [
-  'Paediatric Care & Consultation',
-  'Child-Focused Healthcare',
-  'Multi-Speciality Medical Care',
-  'Family-Centered Patient Support',
+  'General Medicine & Physician Consultations',
+  'Specialized Paediatric & Neonatal Care',
+  'Chronic Illness & Health Monitoring',
+  '24/7 Emergency & Inpatient Facilities',
 ];
 
 const pillars = [
-  { icon: Baby,         label: 'Child-Focused Care', desc: 'Designed around children & families' },
-  { icon: Stethoscope,  label: 'Multi-Speciality',   desc: 'Paediatric & general medical care' },
-  { icon: MapPin,       label: 'Srikantam Circle',  desc: 'RTC Bus-stand Road, Anantapur' },
-  { icon: ShieldCheck,  label: 'Family-Centered',    desc: 'Supportive care for parents & kids' },
+  { icon: Stethoscope, label: 'General Medicine',    desc: 'Adult primary healthcare & physician care' },
+  { icon: Baby,        label: 'Specialized Child Care', desc: 'Expert paediatricians & dedicated child wing' },
+  { icon: Activity,    label: 'Multi-Speciality Care',  desc: 'Emergency, fever clinic & diagnostics' },
+  { icon: MapPin,      label: 'Srikantam Circle',     desc: 'RTC Bus-stand Road, central Anantapur' },
 ];
 
 export function About() {
@@ -38,20 +38,20 @@ export function About() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <div className="section-label">ABOUT THE HOSPITAL</div>
+            <div className="section-label">ABOUT SRI KAVERY HOSPITAL</div>
             <h2 id="about-heading" style={{
               fontFamily: 'Fraunces, Georgia, serif',
               fontSize: 'clamp(2rem, 3.5vw, 3.25rem)', fontWeight: 700,
               lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--text)', marginBottom: '1.25rem',
             }}>
-              Healthcare Built Around{' '}
-              <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Every Little Heart</span>
+              Comprehensive Family Care,{' '}
+              <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Specialized for Children</span>
             </h2>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.85, marginBottom: '1rem' }}>
-              Sri Kavery Paediatric & Multi-Speciality Hospital is a child-focused healthcare facility in Anantapur dedicated to providing compassionate medical care for children and families.
+              Sri Kavery Paediatric & Multi-Speciality Hospital is an advanced healthcare facility in Anantapur providing comprehensive General Medicine, Physician consultations, and family healthcare alongside a dedicated Centre of Excellence for Paediatric and child care.
             </p>
             <p style={{ fontSize: '0.9375rem', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Located at Srikantam Circle on RTC Bus Stand Road, the hospital is positioned to provide accessible healthcare in the heart of Anantapur, with paediatric care at the center of its healthcare identity.
+              From adult primary care, hypertension, and chronic disease management to specialized newborn care, childhood illnesses, and pediatric emergencies, we combine experienced medical specialists with compassionate care for all age groups.
             </p>
 
             {/* Checkmarks Grid */}
@@ -186,7 +186,7 @@ export function About() {
               </div>
               <div>
                 <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text)' }}>Specialist Doctors</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Paediatricians & Physicians</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Physicians & Paediatricians</div>
               </div>
             </motion.div>
 
@@ -216,7 +216,7 @@ export function About() {
                 width: 10, height: 10, borderRadius: '50%', background: '#22C55E',
                 boxShadow: '0 0 10px #22C55E',
               }} />
-              <div style={{ fontSize: '0.8125rem', fontWeight: 700 }}>24/7 Active OPD & Care</div>
+              <div style={{ fontSize: '0.8125rem', fontWeight: 700 }}>24/7 General & Child OPD</div>
             </motion.div>
           </motion.div>
         </div>

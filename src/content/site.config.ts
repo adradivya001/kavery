@@ -6,12 +6,12 @@
 export const siteConfig = {
   name: 'Sri Kavery Paediatric and Multi Speciality Hospital',
   shortName: 'Sri Kavery Hospital',
-  tagline: 'Your Health, Our Priority',
+  tagline: 'Comprehensive Healthcare for Adults & Families · Specialized Care for Children',
   heroLabel: 'SRI KAVERY PAEDIATRIC & MULTI-SPECIALITY HOSPITAL',
-  heroHeadingLine1: 'Compassionate Care.',
-  heroHeadingLine2: 'Growing Healthier.',
+  heroHeadingLine1: 'Complete Family Healthcare.',
+  heroHeadingLine2: 'Specialized Care for Children.',
   description:
-    'Sri Kavery Paediatric & Multi Speciality Hospital in Anantapur offers child care expertise, multi-speciality consultations, and compassionate medical treatment for children and families.',
+    'Sri Kavery Paediatric & Multi Speciality Hospital in Anantapur provides complete General Medicine, Adult Primary Care, Physician consultations, alongside specialized paediatric and newborn healthcare.',
 
   manager: {
     name: 'Tarun Kumar Devarakonda',

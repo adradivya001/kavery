@@ -35,12 +35,12 @@ const itemVariants = {
 
 /* Specialty Ticker Item */
 const tickerSpecialties = [
-  'Paediatric Care & Child Health',
-  'Newborn & Infant Care',
-  'Routine Childhood Immunization',
-  'Paediatric Emergency Care',
-  'General Medicine & Family Health',
-  'Multi-Speciality Consultations',
+  'General Medicine & Adult Healthcare',
+  'Specialized Paediatric Care',
+  'Physician Consultations & Chronic Care',
+  'Newborn, Infant & Child Health',
+  'Fever Clinic & Preventive Health Checkups',
+  '24/7 Emergency & Inpatient Support',
 ];
 
 export function Hero() {
@@ -172,11 +172,11 @@ export function Hero() {
                   }}
                 />
                 <span style={{ fontSize: '0.8125rem', fontWeight: 750, color: '#1677A8', letterSpacing: '0.01em' }}>
-                  24/7 Paediatric & Multi-Speciality Care in Anantapur
+                  General Medicine & Specialized Paediatric Care in Anantapur
                 </span>
                 <span style={{ width: '1px', height: '14px', background: '#1677A830', margin: '0 2px' }} />
                 <span style={{ fontSize: '0.75rem', fontWeight: 650, color: '#0284C7', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Zap size={12} color="#0284C7" /> Active Care Ready
+                  <Zap size={12} color="#0284C7" /> 24/7 Care Ready
                 </span>
               </div>
             </motion.div>
@@ -197,7 +197,7 @@ export function Hero() {
               }}>
                 <Sparkles size={14} color="#0284C7" />
                 <span>Speciality Focus:</span>
-                <div style={{ height: '20px', overflow: 'hidden', position: 'relative', width: '250px' }}>
+                <div style={{ height: '20px', overflow: 'hidden', position: 'relative', width: '280px' }}>
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={tickerIndex}
@@ -227,14 +227,14 @@ export function Hero() {
                 margin: '0 0 1.25rem 0',
               }}
             >
-              Compassionate Care.{' '}
+              Complete Family Healthcare.{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #1677A8 0%, #4AA9C8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 display: 'inline-block',
               }}>
-                Growing Healthier.
+                Specialized Care for Children.
               </span>
             </motion.h1>
 
@@ -250,7 +250,7 @@ export function Hero() {
                 fontWeight: 450,
               }}
             >
-              Anantapur's child-focused facility delivering advanced paediatric care, newborn & infant care, general medicine, and round-the-clock emergency medical response.
+              Providing expert General Medicine, Physician consultations, and adult primary care alongside Anantapur's dedicated, state-of-the-art Paediatric and newborn care center with 24/7 medical emergency response.
             </motion.p>
 
             {/* CTA Buttons Row */}

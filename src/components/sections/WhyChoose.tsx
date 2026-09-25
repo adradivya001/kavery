@@ -1,43 +1,43 @@
 import { useInView, useReducedMotion } from '@/hooks';
 import { motion } from 'framer-motion';
-import { Baby, Stethoscope, Heart, MapPin, Clock } from 'lucide-react';
+import { Baby, Stethoscope, Heart, MapPin, Clock, ShieldCheck } from 'lucide-react';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const whyItems = [
   {
     number: '01',
-    icon: Baby,
-    title: 'Child-Centered Care',
-    desc: 'Healthcare with special attention to the comfort and needs of children.',
+    icon: Stethoscope,
+    title: 'General Medicine Expertise',
+    desc: 'Expert physician consultations, diabetes, hypertension, and comprehensive adult healthcare.',
     color: '#1677A8',
   },
   {
     number: '02',
-    icon: Stethoscope,
-    title: 'Paediatric Focus',
-    desc: "A healthcare environment centered around children's medical needs.",
-    color: '#4AA9C8',
+    icon: Baby,
+    title: 'Specialized Child Care',
+    desc: 'Dedicated paediatric specialists offering gentle, child-focused clinical care and vaccinations.',
+    color: '#E11D48',
   },
   {
     number: '03',
     icon: Heart,
-    title: 'Compassionate Approach',
-    desc: 'A supportive experience for both children and their parents.',
+    title: 'Family-Centered Compassion',
+    desc: 'Supportive, patient-first care experience tailored for both adult patients and parents with kids.',
     color: '#F4B942',
   },
   {
     number: '04',
     icon: MapPin,
-    title: 'Accessible Location',
-    desc: 'Conveniently located near the RTC Bus Stand in Anantapur.',
+    title: 'Accessible Central Location',
+    desc: 'Centrally located at Srikantam Circle, near the RTC Bus Stand in Anantapur.',
     color: '#17324D',
   },
   {
     number: '05',
     icon: Clock,
-    title: '24/7 Availability',
-    desc: 'Hospital availability throughout the day and night.',
+    title: '24/7 Emergency & Inpatient',
+    desc: 'Round-the-clock emergency medical response, pharmacy, and hospital inpatient facilities.',
     color: '#16A34A',
   },
 ];
@@ -55,15 +55,18 @@ export function WhyChoose() {
           transition={{ duration: 0.55, ease: EASE }}
           style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3.5rem)' }}
         >
-          <div className="section-label" style={{ justifyContent: 'center' }}>WHY FAMILIES CHOOSE US</div>
+          <div className="section-label" style={{ justifyContent: 'center' }}>WHY PATIENTS & FAMILIES CHOOSE US</div>
           <h2 id="why-heading" style={{
             fontFamily: 'Fraunces, Georgia, serif',
             fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700,
-            lineHeight: 1.12, letterSpacing: '-0.02em', color: 'var(--text)', maxWidth: 620, margin: '0 auto',
+            lineHeight: 1.12, letterSpacing: '-0.02em', color: 'var(--text)', maxWidth: 680, margin: '0 auto',
           }}>
-            Care That Puts{' '}
-            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Families First</span>
+            Trusted Healthcare for{' '}
+            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>Adults & Children</span>
           </h2>
+          <p style={{ marginTop: 12, color: 'var(--text-muted)', fontSize: '0.975rem', maxWidth: 620, margin: '12px auto 0', lineHeight: 1.7 }}>
+            Delivering quality clinical excellence in General Medicine combined with specialized paediatric care for growing families in Anantapur.
+          </p>
         </motion.div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 18 }}>

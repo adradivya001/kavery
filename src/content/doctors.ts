@@ -46,7 +46,7 @@ export const doctors: Doctor[] = [
     designation: 'Physician',
     qualifications: 'M.B.B.S., D.N.B. (General Medicine)',
     speciality: 'General Medicine',
-    specialitySlug: 'multi-speciality-support',
+    specialitySlug: 'general-medicine',
     apmcReg: 'APMC: Verified',
     focusAreas: [
       'General Medicine',

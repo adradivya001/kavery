@@ -416,6 +416,18 @@ ul, ol { list-style: none; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
 @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
 
+@media (max-width: 992px) {
+  .hero-grid-container {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-left-col, .hero-right-col {
+    grid-column: span 1 !important;
+  }
+  .hero-right-col video {
+    min-height: 480px;
+  }
+}
+
 /* ── Utilities ────────────────────────────────────────────── */
 .text-center { text-align: center; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }

@@ -132,16 +132,19 @@ export function Hero() {
         width: '100%',
         padding: 'clamp(1.5rem, 3vh, 3rem) clamp(1.25rem, 3vw, 2.5rem)',
       }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          gap: 'clamp(2rem, 4vw, 3.5rem)',
-          alignItems: 'center',
-        }}>
+        <div
+          className="hero-grid-container"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: 'clamp(2rem, 4vw, 3.5rem)',
+            alignItems: 'stretch',
+          }}
+        >
 
           {/* ══ LEFT COLUMN: High-Contrast Copy & Action Hub (7 Cols) ═════════ */}
           <motion.div
-            style={{ gridColumn: 'span 7' }}
+            style={{ gridColumn: 'span 7', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
             initial={rm ? false : 'hidden'}
             animate="visible"
             variants={containerVariants}
@@ -366,9 +369,15 @@ export function Hero() {
 
           </motion.div>
 
-          {/* ══ RIGHT COLUMN: Architectural Image Showcase Frame (5 Cols) ═════ */}
+          {/* ══ RIGHT COLUMN: Architectural Video Showcase Frame (5 Cols) ═════ */}
           <motion.div
-            style={{ gridColumn: 'span 5' }}
+            style={{
+              gridColumn: 'span 5',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              justifyContent: 'center',
+            }}
             initial={rm ? false : { opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
@@ -381,14 +390,20 @@ export function Hero() {
               padding: '10px',
               background: '#FFFFFF',
               boxShadow: '0 25px 60px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.08)',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              boxSizing: 'border-box',
             }}>
-              {/* Inner Video Container */}
+              {/* Inner Video Container (Matches full height seamlessly) */}
               <div style={{
                 position: 'relative',
                 borderRadius: '24px',
                 overflow: 'hidden',
                 background: '#0F172A',
-                aspectRatio: '9/16',
+                flex: '1 1 0',
+                minHeight: '440px',
+                display: 'flex',
               }}>
                 <video
                   src="/assets/about_video.mp4"
@@ -432,43 +447,63 @@ export function Hero() {
                   </div>
                 </div>
 
-
               </div>
 
-              {/* Bottom Dark ECG Status Bar */}
+              {/* REAL-TIME DYNAMIC ANIMATED ECG HEARTBEAT WIDGET (Bottom Bar) */}
               <div style={{
-                background: '#0E2135',
+                marginTop: '10px',
+                padding: '14px 18px',
                 borderRadius: '0 0 24px 24px',
                 margin: '10px -10px -10px -10px',
-                padding: '16px 20px',
+                background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                color: '#FFFFFF',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'space-between',
-                color: '#FFFFFF',
+                gap: '14px',
+                boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
+                flexShrink: 0,
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{
-                    width: '36px', height: '36px', borderRadius: '10px',
-                    background: 'rgba(255,255,255,0.08)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#F43F5E',
-                  }}>
-                    <Heart size={18} />
-                  </div>
-                  {/* ECG Pulse SVG animation */}
-                  <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
-                    <path d="M0 10H15L20 3L27 17L34 7L39 10H60" stroke="#F43F5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                {/* Heart Icon with Pulse animation */}
+                <motion.div
+                  animate={rm ? {} : { scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{
+                    width: 36, height: 36, borderRadius: 10, background: 'rgba(244, 63, 94, 0.15)',
+                    border: '1px solid rgba(244, 63, 94, 0.3)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                  }}
+                >
+                  <HeartPulse size={20} color="#F43F5E" />
+                </motion.div>
+
+                {/* Animated SVG Pulse Line */}
+                <div style={{ flex: 1, position: 'relative', overflow: 'hidden', height: 26 }}>
+                  <svg width="100%" height="26" viewBox="0 0 160 26" preserveAspectRatio="none">
+                    <motion.polyline
+                      points="0,13 30,13 40,4 50,22 60,2 70,24 80,13 160,13"
+                      fill="none"
+                      stroke="#F43F5E"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                    />
                   </svg>
                 </div>
 
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '0.875rem', fontWeight: 750, color: '#F8FAFC', display: 'flex', alignItems: 'center', gap: '6px', justifyContent: 'flex-end' }}>
-                    <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E', display: 'inline-block' }} />
-                    <span>Active Emergency & Care</span>
+                {/* Status Indicator with Blinking Green Dot */}
+                <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                  <div style={{ fontSize: '0.8125rem', fontWeight: 750, color: '#FFFFFF', display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'flex-end' }}>
+                    <motion.span
+                      animate={rm ? {} : { opacity: [1, 0.3, 1] }}
+                      transition={{ duration: 1.2, repeat: Infinity }}
+                      style={{ width: 8, height: 8, borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px #22C55E' }}
+                    />
+                    Active ICU & Surgery
                   </div>
-                  <div style={{ fontSize: '0.75rem', color: '#94A8C8', marginTop: '2px' }}>
-                    24/7 Hospital Operations
-                  </div>
+                  <div style={{ fontSize: '0.6875rem', color: '#94A3B8', marginTop: 1 }}>72 BPM · 24/7 Operations</div>
                 </div>
               </div>
 

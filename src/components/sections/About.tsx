@@ -110,8 +110,8 @@ export function About() {
             <div style={{
               position: 'relative',
               width: '100%',
-              maxWidth: '420px',
-              aspectRatio: '4/4.5',
+              maxWidth: '480px',
+              height: 'clamp(480px, 58vh, 580px)',
               borderRadius: '32px',
               overflow: 'hidden',
               background: '#071320',
@@ -126,6 +126,7 @@ export function About() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: 'center 35%',
                   display: 'block',
                 }}
               />

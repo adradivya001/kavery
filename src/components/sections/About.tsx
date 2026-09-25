@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { BedDouble, MapPin, Stethoscope, Users, CheckCircle2, Baby, ShieldCheck, Play, HeartPulse, Activity } from 'lucide-react';
 import { useInView, useReducedMotion } from '@/hooks';
+import kaveryHeroImg from '@/assets/kavery-hero.png';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -105,22 +106,22 @@ export function About() {
               padding: '1.5rem 0',
             }}
           >
-            {/* Portrait Video Card Frame (9:16) */}
+            {/* Hospital Image Card Frame */}
             <div style={{
               position: 'relative',
               width: '100%',
-              maxWidth: '360px',
-              aspectRatio: '9/16',
+              maxWidth: '420px',
+              aspectRatio: '4/4.5',
               borderRadius: '32px',
               overflow: 'hidden',
               background: '#071320',
               border: '4px solid rgba(255, 255, 255, 0.95)',
               boxShadow: '0 24px 64px -12px rgba(22, 119, 168, 0.35), 0 8px 24px rgba(23, 50, 77, 0.2)',
             }}>
-              <video
-                src="/assets/about_video.mp4"
-                playsInline
-                controls
+              {/* Hospital Image */}
+              <img
+                src={kaveryHeroImg}
+                alt="Sri Kavery Hospital Building"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -149,7 +150,7 @@ export function About() {
                 letterSpacing: '0.03em',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
               }}>
-                <Play size={11} fill="#4AA9C8" color="#4AA9C8" /> Hospital Tour & Facilities
+                <MapPin size={11} color="#4AA9C8" /> Sri Kavery Hospital, Anantapur
               </div>
             </div>
 

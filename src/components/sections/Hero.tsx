@@ -3,13 +3,12 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import {
   ArrowRight, BedDouble, Phone, ShieldCheck, Activity,
   Stethoscope, Clock, MapPin, HeartPulse, UserCheck,
-  CheckCircle2, Sparkles, ChevronRight, Zap, Heart
+  CheckCircle2, Sparkles, ChevronRight, Zap, Heart, Play
 } from 'lucide-react';
 import { siteConfig } from '@/content/site.config';
 import { useReducedMotion } from '@/hooks';
 import { trackEvent } from '@/lib/analytics';
 
-import kaveryHeroImg from '@/assets/kavery-hero.png';
 import doc1Img from '@/assets/doctors/doctor-paediatrician.png';
 import doc2Img from '@/assets/doctors/doctor-specialist.png';
 import managerImg from '@/assets/team/hospital-manager.png';
@@ -383,17 +382,18 @@ export function Hero() {
               background: '#FFFFFF',
               boxShadow: '0 25px 60px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.08)',
             }}>
-              {/* Inner Image Container */}
+              {/* Inner Video Container */}
               <div style={{
                 position: 'relative',
                 borderRadius: '24px',
                 overflow: 'hidden',
                 background: '#0F172A',
-                aspectRatio: '4/4.5',
+                aspectRatio: '9/16',
               }}>
-                <img
-                  src={kaveryHeroImg}
-                  alt="Sri Kavery Paediatric and Multi Speciality Hospital Building"
+                <video
+                  src="/assets/about_video.mp4"
+                  playsInline
+                  controls
                   style={{
                     width: '100%',
                     height: '100%',

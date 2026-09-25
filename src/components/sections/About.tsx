@@ -92,22 +92,30 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Dedicated Video Player & Highlights */}
+          {/* Right Column: Portrait Video Showcase & Floating Badges */}
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: 36 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE }}
-            style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', position: 'relative' }}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'relative',
+              padding: '1.5rem 0',
+            }}
           >
-            {/* 1. High-Quality Video Tour Card */}
+            {/* Portrait Video Card Frame (9:16) */}
             <div style={{
-              borderRadius: 24,
-              overflow: 'hidden',
-              background: '#071320',
-              border: '1px solid rgba(22, 119, 168, 0.25)',
-              boxShadow: '0 20px 50px rgba(23, 50, 77, 0.22)',
               position: 'relative',
               width: '100%',
+              maxWidth: '360px',
+              aspectRatio: '9/16',
+              borderRadius: '32px',
+              overflow: 'hidden',
+              background: '#071320',
+              border: '4px solid rgba(255, 255, 255, 0.95)',
+              boxShadow: '0 24px 64px -12px rgba(22, 119, 168, 0.35), 0 8px 24px rgba(23, 50, 77, 0.2)',
             }}>
               <video
                 src="/assets/kavery_hospital_combined.mp4"
@@ -118,62 +126,98 @@ export function About() {
                 controls
                 style={{
                   width: '100%',
-                  height: 'auto',
-                  aspectRatio: '16/9',
+                  height: '100%',
                   objectFit: 'cover',
                   display: 'block',
                 }}
               />
-            </div>
 
-            {/* 2. Key Highlights Card */}
-            <div style={{
-              borderRadius: 24,
-              background: 'linear-gradient(145deg, #17324D 0%, #0E2135 100%)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              boxShadow: '0 12px 36px rgba(23, 50, 77, 0.18)',
-              padding: '1.75rem 2rem',
-              color: '#FFFFFF',
-              position: 'relative',
-            }}>
-              <h3 style={{
-                fontFamily: 'Fraunces, Georgia, serif',
-                fontSize: '1.35rem', fontWeight: 700,
-                color: '#FFFFFF', marginBottom: '0.4rem', lineHeight: 1.3,
-              }}>
-                Compassionate, Family-Centered Care
-              </h3>
-              <p style={{
-                color: 'rgba(255,255,255,0.72)',
-                lineHeight: 1.65,
-                fontSize: '0.875rem',
-                margin: '0 0 1.25rem 0',
-              }}>
-                A dedicated team of qualified paediatricians, physicians, and management providing the highest standard of healthcare for children.
-              </p>
-
-              {/* Metrics Strip */}
+              {/* Floating Video Tour Tag */}
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: 16,
-                paddingTop: '1.25rem',
-                borderTop: '1px solid rgba(255,255,255,0.1)',
+                position: 'absolute',
+                top: 16,
+                left: 16,
+                pointerEvents: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '6px 14px',
+                borderRadius: 100,
+                background: 'rgba(23, 50, 77, 0.88)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                color: '#FFFFFF',
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                letterSpacing: '0.03em',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
               }}>
-                <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>24/7</div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Care</div>
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>Multi</div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Speciality</div>
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>AP</div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Registered</div>
-                </div>
+                <Play size={11} fill="#4AA9C8" color="#4AA9C8" /> Hospital Tour & Facilities
               </div>
             </div>
+
+            {/* Floating Badge 1: Specialist Doctors */}
+            <motion.div
+              initial={reducedMotion ? false : { opacity: 0, y: 18, x: -10 }}
+              animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.45, ease: EASE }}
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: 'clamp(-20px, -2vw, 0px)',
+                background: 'white',
+                borderRadius: 20,
+                padding: '14px 18px',
+                border: '1px solid var(--border)',
+                boxShadow: '0 16px 36px rgba(23, 50, 77, 0.16)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                zIndex: 2,
+              }}
+            >
+              <div style={{
+                width: 42, height: 42, borderRadius: 12,
+                background: 'linear-gradient(135deg, #1677A8, #105B82)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0, boxShadow: '0 4px 14px rgba(22,119,168,0.3)',
+              }}>
+                <Users size={20} color="white" />
+              </div>
+              <div>
+                <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text)' }}>Specialist Doctors</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Paediatricians & Physicians</div>
+              </div>
+            </motion.div>
+
+            {/* Floating Badge 2: 24/7 Active Care */}
+            <motion.div
+              initial={reducedMotion ? false : { opacity: 0, y: -18, x: 10 }}
+              animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.55, ease: EASE }}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: 'clamp(-20px, -2vw, 0px)',
+                background: 'rgba(23, 50, 77, 0.94)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: 18,
+                padding: '10px 16px',
+                border: '1px solid rgba(255,255,255,0.15)',
+                boxShadow: '0 12px 30px rgba(0,0,0,0.25)',
+                color: '#FFFFFF',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                zIndex: 2,
+              }}
+            >
+              <div style={{
+                width: 10, height: 10, borderRadius: '50%', background: '#22C55E',
+                boxShadow: '0 0 10px #22C55E',
+              }} />
+              <div style={{ fontSize: '0.8125rem', fontWeight: 700 }}>24/7 Active OPD & Care</div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

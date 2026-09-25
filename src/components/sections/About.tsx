@@ -32,7 +32,7 @@ export function About() {
     >
       <div className="container">
         <div className="grid-2" style={{ alignItems: 'center', gap: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
-          {/* Left Column */}
+          {/* Left Column: Hospital Introduction */}
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: -36 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -92,141 +92,88 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Complete Video Showcase & Floating Badge */}
+          {/* Right Column: Dedicated Video Player & Highlights */}
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: 36 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE }}
-            style={{ position: 'relative' }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', position: 'relative' }}
           >
-            {/* Modern Video Player Card */}
+            {/* 1. High-Quality Video Tour Card */}
             <div style={{
-              borderRadius: 28,
+              borderRadius: 24,
               overflow: 'hidden',
               background: '#071320',
-              border: '1px solid rgba(255,255,255,0.1)',
-              boxShadow: '0 24px 60px rgba(23, 50, 77, 0.28)',
+              border: '1px solid rgba(22, 119, 168, 0.25)',
+              boxShadow: '0 20px 50px rgba(23, 50, 77, 0.22)',
               position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
+              width: '100%',
             }}>
-              {/* Full Video Frame - 100% visible, no cropping */}
-              <div style={{
-                position: 'relative',
-                width: '100%',
-                background: '#000000',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
+              <video
+                src="/assets/kavery_hospital_combined.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  aspectRatio: '16/9',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
+            </div>
+
+            {/* 2. Key Highlights Card */}
+            <div style={{
+              borderRadius: 24,
+              background: 'linear-gradient(145deg, #17324D 0%, #0E2135 100%)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: '0 12px 36px rgba(23, 50, 77, 0.18)',
+              padding: '1.75rem 2rem',
+              color: '#FFFFFF',
+              position: 'relative',
+            }}>
+              <h3 style={{
+                fontFamily: 'Fraunces, Georgia, serif',
+                fontSize: '1.35rem', fontWeight: 700,
+                color: '#FFFFFF', marginBottom: '0.4rem', lineHeight: 1.3,
               }}>
-                <video
-                  src="/assets/kavery_hospital_combined.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '520px',
-                    objectFit: 'contain',
-                    display: 'block',
-                  }}
-                />
-                
-                {/* Floating Video Tour Tag */}
-                <div style={{
-                  position: 'absolute',
-                  top: 14,
-                  left: 14,
-                  pointerEvents: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  padding: '6px 14px',
-                  borderRadius: 100,
-                  background: 'rgba(23, 50, 77, 0.88)',
-                  backdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  color: '#FFFFFF',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.03em',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                }}>
-                  <Play size={11} fill="#4AA9C8" color="#4AA9C8" /> Hospital Video Tour & Facilities
+                Compassionate, Family-Centered Care
+              </h3>
+              <p style={{
+                color: 'rgba(255,255,255,0.72)',
+                lineHeight: 1.65,
+                fontSize: '0.875rem',
+                margin: '0 0 1.25rem 0',
+              }}>
+                A dedicated team of qualified paediatricians, physicians, and management providing the highest standard of healthcare for children.
+              </p>
+
+              {/* Metrics Strip */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: 16,
+                paddingTop: '1.25rem',
+                borderTop: '1px solid rgba(255,255,255,0.1)',
+              }}>
+                <div>
+                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>24/7</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Care</div>
                 </div>
-              </div>
-
-              {/* Video Card Bottom Info */}
-              <div style={{
-                padding: '1.75rem 2rem 2rem',
-                background: 'linear-gradient(145deg, #17324D 0%, #0E2135 100%)',
-              }}>
-                <h3 style={{
-                  fontFamily: 'Fraunces, Georgia, serif',
-                  fontSize: '1.4rem', fontWeight: 700,
-                  color: 'white', marginBottom: '0.5rem', lineHeight: 1.3,
-                }}>
-                  Compassionate, Family-Centered Care
-                </h3>
-                <p style={{
-                  color: 'rgba(255,255,255,0.72)',
-                  lineHeight: 1.7,
-                  fontSize: '0.9rem',
-                  marginBottom: '1.25rem',
-                }}>
-                  A team of qualified doctors and management working together to provide the best healthcare experience for your children.
-                </p>
-
-                <div style={{
-                  display: 'flex',
-                  gap: 24,
-                  paddingTop: '1.25rem',
-                  borderTop: '1px solid rgba(255,255,255,0.1)',
-                }}>
-                  {[{ v: '24/7', l: 'Care' }, { v: 'Multi', l: 'Speciality' }, { v: 'AP', l: 'Registered' }].map(({ v, l }) => (
-                    <div key={l}>
-                      <div style={{
-                        fontFamily: 'Fraunces, Georgia, serif',
-                        fontSize: '1.35rem', fontWeight: 700,
-                        color: '#69C1DC',
-                      }}>{v}</div>
-                      <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', marginTop: 2 }}>{l}</div>
-                    </div>
-                  ))}
+                <div>
+                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>Multi</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Speciality</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: '1.35rem', fontWeight: 700, color: '#4AA9C8' }}>AP</div>
+                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)', marginTop: 2 }}>Registered</div>
                 </div>
               </div>
             </div>
-
-            {/* Floating Badge */}
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0, y: 16, rotate: -2 }}
-              animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
-              transition={{ duration: 0.5, delay: 0.45, ease: EASE }}
-              style={{
-                position: 'absolute', bottom: -18, left: -18,
-                background: 'white', borderRadius: 18, padding: '14px 18px',
-                border: '1px solid var(--border)', boxShadow: 'var(--shadow-xl)',
-                display: 'flex', alignItems: 'center', gap: 12,
-                zIndex: 2,
-              }}
-            >
-              <div style={{
-                width: 42, height: 42, borderRadius: 12,
-                background: 'linear-gradient(135deg, #1677A8, #105B82)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                flexShrink: 0, boxShadow: '0 4px 14px rgba(22,119,168,0.3)',
-              }}>
-                <Users size={20} color="white" />
-              </div>
-              <div>
-                <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text)' }}>Specialist Doctors</div>
-                <div style={{ fontSize: '0.775rem', color: 'var(--text-muted)' }}>Paediatricians & Physicians</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

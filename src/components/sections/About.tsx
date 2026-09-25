@@ -119,9 +119,6 @@ export function About() {
             }}>
               <video
                 src="/assets/about_video.mp4"
-                autoPlay
-                muted
-                loop
                 playsInline
                 controls
                 style={{
